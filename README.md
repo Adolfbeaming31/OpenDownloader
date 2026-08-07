@@ -94,14 +94,9 @@ OpenDownloader features a sidebar navigation menu. Use your remote control's **L
 
 ### 5. Managing Bookmarks
 - While on a webpage, click the **Star Icon** in the top browser bar to add the page to your bookmarks.
-- Navigate to the **Bookmarks** tab in the sidebar to view, delete, or quickly jump to any of your saved links.
+- Navigate to the **Bookmarks** tab in the sidebar to view, delete, or quickly jump to any of your saved links
 
-### 6. GitHub Releases Explorer
-- Select **GitHub** from the sidebar.
-- Input any public repository path in the format `owner/repo` (e.g., `Kodi-Game/game.libretro`) and click **Fetch Releases**.
-- Browse all official releases, release notes, and download official APK assets directly with a single click.
-
-### 7. Self-Updater
+### 6. Self-Updater
 - Select **Updater** from the sidebar.
 - Click **Check for Updates** to query the latest official GitHub releases for OpenDownloader.
 - If a newer release is found, view the release notes and click **Download Update** to download the new version.

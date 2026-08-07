@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#121212">
+
+    <!-- Top Browser Controls Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="@drawable/button_focus_bg"
+            android:focusable="true"
+            android:contentDescription="Back"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_next"
+            android:background="@drawable/button_focus_bg"
+            android:focusable="true"
+            android:contentDescription="Forward"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/stat_notify_sync"
+            android:background="@drawable/button_focus_bg"
+            android:focusable="true"
+            android:contentDescription="Refresh"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_dialog_map"
+            android:background="@drawable/button_focus_bg"
+            android:focusable="true"
+            android:contentDescription="Home"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Address input -->
+        <EditText
+            android:id="@+id/etUrl"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Type URL or Google Search..."
+            android:textColorHint="#88FFFFFF"
+            android:textColor="#FFFFFF"
+            android:background="#1E1E1E"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:focusable="true"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnGo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="GO"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00E5FF"
+            android:focusable="true"
+            android:layout_marginEnd="4dp" />
+
+        <ImageButton
+            android:id="@+id/btnBookmark"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/btn_star_big_off"
+            android:background="@drawable/button_focus_bg"
+            android:focusable="true"
+            android:contentDescription="Add Bookmark"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnToggleCursor"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Cursor"
+            android:textSize="11sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#1E1E1E"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- WebView Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1E1E1E">
+
+        <com.opendedownloader.app.browser.VirtualCursorWebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+</LinearLayout>

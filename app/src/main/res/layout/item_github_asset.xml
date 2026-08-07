@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/btnDownloadAsset"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="📥 kodi-20.2-Nexus-armeabi-v7a.apk (75.4 MB)"
+    android:textColor="#FFFFFF"
+    android:textSize="11sp"
+    android:gravity="start|center_vertical"
+    android:paddingStart="12dp"
+    android:layout_marginBottom="6dp"
+    android:backgroundTint="#2E2E2E"
+    android:focusable="true" />

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Built-in App Updater"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/app_logo"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvCurrentVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Version: 1.0.0"
+        android:textColor="#88FFFFFF"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Action Buttons -->
+    <Button
+        android:id="@+id/btnCheckUpdates"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="Check for Updates"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#00E5FF"
+        android:focusable="true"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Update Info Panel (hidden by default) -->
+    <LinearLayout
+        android:id="@+id/panelUpdateInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#1E1E1E"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvUpdateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New Update Available: v1.1.0"
+            android:textColor="#00FFCC"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Release Notes:"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvReleaseNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Fixed fast download issue.\n• Added better virtual cursor speed control."
+                android:textColor="#DDFFFFFF"
+                android:textSize="12sp" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnDownloadUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Download &amp; Install Update"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your application is up to date."
+        android:textColor="#88FFFFFF"
+        android:textSize="13sp"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

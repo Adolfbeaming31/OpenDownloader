@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:background="#1E1E1E"
+    android:focusable="true"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- File Name and Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="app-release.apk"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:ellipsize="middle"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status: DOWNLOADING | 5.2 MB / 15.0 MB (35%)"
+                android:textColor="#88FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Dynamic Action buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnPauseResume"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Pause"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#00E5FF"
+                android:focusable="true"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnInstall"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Install"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:focusable="true"
+                android:visibility="gone"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Delete"
+                android:textSize="11sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FF5252"
+                android:focusable="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/pbDownload"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="8dp"
+        android:max="100"
+        android:progress="35"
+        android:progressTint="#00E5FF" />
+
+    <!-- SHA-256 display (hidden by default) -->
+    <TextView
+        android:id="@+id/tvSha256"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SHA-256: 3a2c6b3c..."
+        android:textColor="#00FFCC"
+        android:textSize="10sp"
+        android:layout_marginTop="6dp"
+        android:visibility="gone"
+        android:singleLine="true"
+        android:ellipsize="end" />
+
+</LinearLayout>

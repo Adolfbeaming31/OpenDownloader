@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GitHub Releases Browser"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search/Input Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/etRepoPath"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:hint="Type user/repo (e.g., kodi-game/game.libretro)"
+            android:textColorHint="#88FFFFFF"
+            android:textColor="#FFFFFF"
+            android:background="#1E1E1E"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            android:focusable="true"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnFetchReleases"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:text="Browse"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00E5FF"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <!-- Status indicator -->
+    <TextView
+        android:id="@+id/tvGitStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Type a GitHub repository and click Browse."
+        android:textColor="#88FFFFFF"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Releases RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReleases"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:descendantFocusability="afterDescendants" />
+
+</LinearLayout>

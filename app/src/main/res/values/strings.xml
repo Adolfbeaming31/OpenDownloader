@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">OpenDownloader</string>
+    <string name="title_browser">Browser</string>
+    <string name="title_downloads">Downloads</string>
+    <string name="title_file_manager">File Manager</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="title_github">GitHub Releases</string>
+    <string name="title_settings">Settings</string>
+</resources>

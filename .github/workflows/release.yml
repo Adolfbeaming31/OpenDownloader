@@ -1,9 +1,12 @@
 name: Build and Release APK
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+    inputs:
+      release_name:
+        description: 'Name of the release'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -36,21 +39,11 @@ jobs:
       - name: Build Debug APK
         run: gradle assembleDebug
 
-      - name: Prepare Release Name and Tag
-        id: release_info
-        run: |
-          # Use tag name or fallback to v1.0
-          TAG_NAME="${{ github.ref_name }}"
-          if [ -z "$TAG_NAME" ]; then
-            TAG_NAME="v1.0"
-          fi
-          echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
-
       - name: Create GitHub Release and Upload APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.release_info.outputs.tag_name }}
-          name: ${{ steps.release_info.outputs.tag_name }}
+          tag_name: ${{ inputs.release_name }}
+          name: ${{ inputs.release_name }}
           draft: false
           prerelease: false
           generate_release_notes: true

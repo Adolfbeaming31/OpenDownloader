@@ -63,8 +63,6 @@ OpenDownloader is an open-source, native Android TV application optimized for br
 
 ## Installation & Setup
 
-### Regular Users (Easiest Method)
-
 To install OpenDownloader on your Android TV:
 1. Go to the **Releases** section on this GitHub repository.
 2. Download the latest pre-compiled release APK (`opendedownloader-vX.Y.Z.apk`).

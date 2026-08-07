@@ -71,37 +71,6 @@ To install OpenDownloader on your Android TV:
 3. Sideload the APK onto your Android TV device using your preferred method (e.g., via USB drive or ADB).
 4. Launch the application from your TV's app drawer or Leanback launcher.
 
-### Developers (Building from Source)
-
-If you wish to build or modify the application yourself:
-
-#### Prerequisites
-- **Java Development Kit (JDK):** Version 17
-- **Gradle:** Standard gradle command-line installation (no wrapper is included)
-- **Android SDK:** Command-line tools or Android Studio with SDK 34 installed
-
-#### Build Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/opendedownloader/app.git
-   cd app
-   ```
-
-2. Build the Debug APK:
-   ```bash
-   gradle assembleDebug
-   ```
-
-3. Run Tests:
-   ```bash
-   gradle test
-   ```
-
-4. Install the Debug APK onto a connected TV/Emulator via ADB:
-   ```bash
-   adb install app/build/outputs/apk/debug/app-debug.apk
-   ```
-
 ---
 
 ## How to Use OpenDownloader on Android TV

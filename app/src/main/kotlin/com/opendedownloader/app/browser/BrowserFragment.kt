@@ -82,7 +82,22 @@ class BrowserFragment : Fragment() {
         settings.userAgentString = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
         webView.webViewClient = object : WebViewClient() {
+            @Deprecated("Deprecated in Java", ReplaceWith("shouldOverrideUrlLoading(view, request)"))
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                if (url != null) {
+                    if (url.endsWith(".apk", ignoreCase = true)) {
+                        promptApkDownload(url)
+                        return true
+                    }
+                    view?.loadUrl(url)
+                    etUrl.setText(url)
+                    updateBookmarkStar(url)
+                }
+                return true
+            }
+
+            override fun shouldOverrideUrlLoading(view: WebView?, request: android.webkit.WebResourceRequest?): Boolean {
+                val url = request?.url?.toString()
                 if (url != null) {
                     if (url.endsWith(".apk", ignoreCase = true)) {
                         promptApkDownload(url)
@@ -110,7 +125,7 @@ class BrowserFragment : Fragment() {
             }
         }
 
-        webView.setDownloadListener { url, _, contentDisposition, mimeType, contentLength ->
+        webView.setDownloadListener { url, _, _, _, _ ->
             promptApkDownload(url)
         }
     }

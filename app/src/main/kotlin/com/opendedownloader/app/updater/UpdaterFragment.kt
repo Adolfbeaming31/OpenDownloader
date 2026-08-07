@@ -175,7 +175,7 @@ class UpdaterFragment : Fragment() {
             file.delete()
         }
 
-        val downloadId = DownloadEngine.startDownload(requireContext(), url, fileName, downloadsDir)
+        DownloadEngine.startDownload(requireContext(), url, fileName, downloadsDir)
         Toast.makeText(requireContext(), "Downloading update... check progress in Downloads screen.", Toast.LENGTH_LONG).show()
 
         // Switch user to the downloads screen automatically so they can see progress!

